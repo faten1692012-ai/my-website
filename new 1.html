@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>بيانات المدرسة</title>
+	<style>
+
+body {
+    text-align: center;
+    font-weight: bold;
+}
+.school {
+    width: 80%;
+    margin: auto;
+    background-color: lightcyan;
+}
+
+header {
+        margin-top: 30px;
+    padding: 10px;
+    color: white;
+    background-color: darkblue;
+}
+section {
+    padding: 15px; 
+}
+h2 {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    color: blue;
+    border-top: 5px solid blue;
+    border-bottom: 5px solid blue;
+}
+p {
+    font-size: 20px;
+    font-family: Arial;
+}
+footer{padding:5px;color:white;background-color:black;margin-bottom: 30px;}
+#buttonsSection {
+    display: flex;
+    justify-content: center;
+    gap: 100px;  }
+	
+#buttonsSection button {
+    width: 100px;
+    height: 40px; background-color:blue; color:white; font-size:16px; border-radius:8px; font-weight:bold;}
+	#videoModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    border: 2px solid #5dade2;
+    border-radius: 10px;}
+	#bookModal {
+    display: none;}
+	
+	#aboutModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 25px;
+    width: 600px;
+    text-align: center;
+    border: 2px solid #5dade2;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="school">
+<header>
+<h1> بيانات الطالب</h1>  
+</header>
+<section>
+    <h2>معلومات أساسية</h2>
+	    <img src="School.png" width="450" height="400">
+		<p dir="rtl">
+اسم الطالب: (............................)<br><br>
+الفصل: (............................)<br><br>  
+المدرسة: (............................)<br><br>
+محل الإقامة: (............................)
+</p>
+</section>
+<section>
+
+    <h2>أنشطة المدرسة</h2>
+
+</section>
+<section id="buttonsSection">
+
+    <button id="videoButton">مشاهدة الفيديو</button>
+
+    <button id="bookButton">تصفح الكتاب</button>
+
+    <button id="aboutButton">حول</button>
+
+</section>
+<div id="videoModal">
+
+    <button id="closeButton">×</button>
+
+    <h3>مشاهدة الفيديو</h3>
+	
+    <video width="450" controls>
+        <source src="ICT4.mp4" type="video/mp4">
+    </video>
+</div>
+<div id="bookModal">
+
+    <button id="closeBookButton">×</button>
+
+    <h3>تصفح الكتاب</h3>
+	 <iframe 
+        src="https://online.fliphtml5.com/aicvz/vfqv/"
+        width="600"
+        height="400">
+    </iframe>
+</div>
+<div id="aboutModal">
+
+    <button id="closeAboutButton">×</button>
+   <h3>حول</h3>
+   <strong>
+        هذه الصفحة الإلكترونية هي أحد تطبيقات مشروع الكتاب للصف الثاني الإعدادي،
+        وتهدف إلى توظيف ما تم تعلمه في مادة الحاسب الآلي وتكنولوجيا المعلومات
+        في إنشاء صفحة ويب تفاعلية. <br> 
+		المادة الكمبيوتر وتكنولوجيا المعلومات
+    </strong>
+	</div>
+<footer>
+
+    <p>&copyإعداد وتنفيذ: أ/ فاتن أحمد</p>
+
+</footer>
+</div>
+<script>
+document.getElementById("videoButton").onclick = function() {
+    document.getElementById("videoModal").style.display = "block";
+};
+</script>
+<script>
+document.getElementById("closeButton").onclick = function() {
+    document.getElementById("videoModal").style.display = "none";
+    document.querySelector("video").pause();
+    document.querySelector("video").currentTime = 0;
+};
+</script>
+<script>
+document.getElementById("bookButton").onclick = function() {
+    document.getElementById("bookModal").style.display = "block";
+};
+</script>
+<script>
+document.getElementById("closeBookButton").onclick = function() {
+    document.getElementById("bookModal").style.display = "none";
+};
+</script>
+
+<script>
+
+document.getElementById("aboutButton").onclick = function() {
+    document.getElementById("aboutModal").style.display = "block";
+};
+</script>
+<script>
+
+document.getElementById("closeAboutButton").onclick = function() {
+    document.getElementById("aboutModal").style.display = "none";
+};
+</script>
+
+</body>
+
+</html>
